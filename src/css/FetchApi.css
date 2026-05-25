@@ -1,0 +1,41 @@
+
+.titleMovies{
+    text-align: center;
+    font-size: 4rem;
+    margin-top: 2rem;
+    font-family: 'Arial Black', sans-serif;
+    color: white;
+    text-shadow: 3px 3px #2e01f8;
+}
+.container-movies{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap:20px;
+    padding: 20px;
+}
+.movie-card{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align: center;
+    color: white;
+}
+.movie-card h2{
+    transition: 0.3s;
+}
+.movie-card p{
+    transition: 0.3s;
+}
+.poster-img{
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid rgb(248, 246, 246);
+    transition: 0.3s;
+}
+.movie-card:hover .poster-img{
+    transform: scale(1.2);
+}
+.movie-card:hover h2,
+.movie-card:hover p{
+    opacity: 0;
+}

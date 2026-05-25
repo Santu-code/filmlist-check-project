@@ -1,0 +1,116 @@
+.title-my-list{
+    text-align: center;
+    font-size: 4rem;
+    margin-top: 2rem;
+    font-family: 'Arial Black', sans-serif;
+    color: white;
+    text-shadow: 3px 3px #e407b4;
+}
+
+.movie-card-my-list{
+    width: 1000px;
+    height: 400px;
+    border: 2px solid white;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-bottom: 50px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 20px;
+    
+}
+.movie-title-card-my-list h2{
+    font-size: 2rem;
+    text-decoration: underline;
+    text-align: center;
+    color: white;
+    font-family: 'Arial Black', sans-serif;
+}
+.movie-info-my-list{
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: -30px;
+    gap: 40px;
+    
+}
+.movie-img-my-list{
+    width: 200px;
+    height: 300px;
+    border: 2px solid white;
+    margin-left: 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+   
+}
+.movie-saw-info-my-list{
+    width: 150px;
+    height: 150px;
+    border: 2px solid white;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.subtitle-my-list{
+    font-size: 1.5rem;
+    text-decoration: underline;
+}
+.thumbs-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+.thumb-btn{
+    color: #ffffff;
+    cursor: pointer;
+    background-color: transparent;
+}
+.thumb-btn:disabled{
+    color: #ffffff;
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+.movie-like-info-my-list{
+    width: 150px;
+    height: 150px;
+    border: 2px solid white;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.movie-delete-info-my-list{
+    width: 150px;
+    height: 150px;
+    border: 2px solid white;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
