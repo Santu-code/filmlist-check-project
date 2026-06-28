@@ -2,14 +2,25 @@ import {useState, useContext} from 'react'
 import {MyListContext} from '../../context/MyListContext'
 import {Eye, EyeClosed, ThumbsUp, ThumbsDown, Trash} from 'lucide-react'
 import '../../css/MyList.css'
+import Swal from 'sweetalert2'
 
 
 const MyListContainer = ()=>{
     
     const {myList,setWatch, setLike, setDelete} = useContext(MyListContext);
     
-    
-    
+    const deleteFilm = (id) => {
+        setDelete(id);
+        Swal.fire({
+            title: "Film deleted from your list!",
+            draggable: true,
+            timer: 3000,
+            showConfirmButton: false,
+            position: 'top-end',
+            toast: true,
+            icon: 'success',
+          });
+        }
     return(
         <>
             <h1 className='title-my-list'>My List</h1>
@@ -45,7 +56,7 @@ const MyListContainer = ()=>{
                             </div>
                             <div className='movie-delete-info-my-list'>
                             <h2 className='subtitle-my-list'>Delete</h2>
-                            <button onClick={()=> setDelete(movie.id)}>
+                            <button onClick={()=> deleteFilm(movie.id)}>
                                 <Trash color="#f20202" size={20} />
                             </button>
                             </div>

@@ -39,3 +39,10 @@
 .movie-card:hover p{
     opacity: 0;
 }
+.sub-movie-card{
+    display: flex;
+    gap: 25 px;
+}
+.sub-movie-card p{
+    margin-right: 10px;
+}

@@ -1,8 +1,10 @@
 import React from 'react'
-import {useEffect, useState} from 'react'
+import {useEffect, useState, useContext} from 'react'
 import {useNavigate} from 'react-router-dom'
 import CardDetail from '../cardDetail/CardDetail.jsx'
 import '../../css/FetchApi.css'
+import { Badge, BadgeCheck} from 'lucide-react'
+import {MyListContext} from '../../context/MyListContext.jsx'
 
 export const FetchApi = () => {
 
@@ -18,6 +20,10 @@ export const FetchApi = () => {
         
     },[])
 
+    const {myList} = useContext(MyListContext);
+
+
+
   return (
     <>
       <h1 className='titleMovies'>Movies</h1>
@@ -27,7 +33,10 @@ export const FetchApi = () => {
             <div key={movie.id} className="movie-card" onClick={() => setSelectMovie(movie)} >
               <img className='poster-img' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} style={{width:"200px"}}/>
               <h2>{movie.title}</h2>
-              <p>{movie.vote_average.toFixed(1)}</p>
+              <div className='sub-movie-card'>
+                 <p>{movie.vote_average.toFixed(1)}</p>
+                 {myList.some(item => item.id === movie.id) ? <BadgeCheck/> : <Badge />}
+              </div>
             </div>
           ))
         }

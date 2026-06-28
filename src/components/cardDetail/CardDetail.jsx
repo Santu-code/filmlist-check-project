@@ -4,6 +4,7 @@ import {Button} from '@/components/ui/button.jsx'
 import '../../css/CardDetail.css'
 import {useContext} from 'react'
 import {MyListContext} from '../../context/MyListContext.jsx'
+import Swal from 'sweetalert2'
 const CardDetail = ({movie, onClose}) => {
 
     const {myList, setMyList}  = useContext(MyListContext);
@@ -12,6 +13,19 @@ const CardDetail = ({movie, onClose}) => {
 
     if(!movie){
       return  <h2>No se encontro la pelicula.</h2>
+    }
+
+    const addToMyList = () => {
+      setMyList([...myList, {...movie, watch: false, liked: null}]);
+      Swal.fire({
+        title: "Film added to your list!",
+        icon: "success",
+        draggable: true,
+        timer: 3000,
+        showConfirmButton: false,
+        position: 'top-end',
+        toast: true,
+      });
     }
 
   return (
@@ -36,7 +50,7 @@ const CardDetail = ({movie, onClose}) => {
             <p>{movie.vote_average.toFixed(1)}</p>
           </div>
           <div className='item4' >
-            <Button className='btn-add' onClick={()=> setMyList([...myList, {...movie, watch: false, liked: null}])}> + Add to my list</Button>
+            <Button className='btn-add' onClick={addToMyList}> + Add to my list</Button>
           </div>
         </div>
         

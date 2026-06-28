@@ -1,11 +1,19 @@
-import {createContext, useState} from 'react'
+import {createContext, useState, useEffect} from 'react'
 
 
 export const MyListContext = createContext();
 
 export const MyListProvider = ({children}) =>{
 
-    const [myList, setMyList]= useState([]);
+    const [myList, setMyList]= useState(()=>{
+        const myListlocal = localStorage.getItem('myList');
+        return myListlocal ? JSON.parse(myListlocal) : [];
+    });
+
+    useEffect(() =>{
+        localStorage.setItem('myList', JSON.stringify(myList))
+    }, [myList]);
+
     function setLike(id, value){
         setMyList(myList.map(movie=> movie.id === id ? {...movie, liked: value} : movie))
     }
